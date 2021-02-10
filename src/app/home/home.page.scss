@@ -1,8 +1,18 @@
-.logo {
-  margin-left: 19px;
-  margin-top: 5px;
-  width: 25%;
-  height: 25%;
+.container {
+  display: flex;
+  &__image {
+    margin-left: 19px;
+    margin-top: 5px;
+    width: 25%;
+    height: 25%;
+    overflow: hidden;
+    float: left;
+  }
+  &__text {
+    margin-top: 2%;
+    margin-left: 10%;
+    display: inline;
+  }
 }
 
 .belllogo {
