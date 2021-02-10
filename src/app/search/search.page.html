@@ -1,0 +1,57 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar style="color:#F0F0F0;">
+        <img class="logo" src="assets/logoandname.png">
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="notifications" class="belllogo"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-input placeholder="Search for a visit"><ion-icon class="icon-search" name="search"></ion-icon></ion-input>
+
+<ion-slides>
+    <ion-slide>
+        <ion-chip>
+            <ion-label class="top-label">Sightseeing tours</ion-label>
+        </ion-chip>
+        <ion-chip>
+            <ion-label class="top-label">Nature & adventure</ion-label>
+        </ion-chip>
+        <ion-chip>
+            <ion-label class="top-label">Local culture</ion-label>
+        </ion-chip>
+        <ion-chip>
+            <ion-label class="top-label">Food & drink</ion-label>
+        </ion-chip>
+    </ion-slide>
+</ion-slides>
+
+<ion-content>
+    <div class="visitsNear">
+        <ion-list>
+            <ion-item *ngFor="let homeTripCard of homeTripCards" lines="none" color="white">
+                <ion-img class="visitsNear-image" [src]="homeTripCard.image"></ion-img>
+                <ion-label>
+                    <h2 style="font: bold 15px Open Sans;color: #3D3D3D;">{{homeTripCard.name}}</h2>
+                    <p style="font: normal 14px Open Sans;color: #3D3D3D;">{{homeTripCard.description}}</p>
+                    <p>
+                        <ion-chip>
+                            <ion-icon class="icon" name="wallet-outline"></ion-icon>
+                            <ion-label class="bottom-label">{{homeTripCard.price}}</ion-label>
+                        </ion-chip>
+                        <ion-chip>
+                            <ion-icon class="icon" name="timer-outline"></ion-icon>
+                            <ion-label class="bottom-label">{{homeTripCard.time}}</ion-label>
+                        </ion-chip>
+                        <ion-chip>
+                            <ion-icon class="icon" name="star"></ion-icon>
+                            <ion-label class="bottom-label">{{homeTripCard.rating}}</ion-label>
+                        </ion-chip>
+                    </p>
+                </ion-label>
+            </ion-item>
+        </ion-list>
+    </div>
+</ion-content>

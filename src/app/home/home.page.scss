@@ -1,0 +1,94 @@
+.logo {
+  margin-left: 19px;
+  margin-top: 5px;
+  width: 25%;
+  height: 25%;
+}
+
+.belllogo {
+  color: #2b2b2b;
+  opacity: 0.9;
+  width: 27px;
+  height: 27px;
+}
+
+.topTrip {
+  width: 100%;
+  height: 140px;
+}
+
+.topTrip::after {
+  content: "";
+  background-image: url(../../assets/toptripbackground.jpg);
+  opacity: 0.2;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 196px;
+  position: absolute;
+}
+
+.topTrip-image {
+  width: 114px;
+  height: 85px;
+  margin-right: 15px;
+  border-radius: 8px;
+}
+
+.topTrip-header{
+  font: normal normal normal 25px Somatic Rounded;
+  letter-spacing: 1.36px;
+  color: #3D3D3D;
+}
+
+.topTrip-cards{
+  padding: 3% 0 3% 3%;
+  margin-left: 2%;
+}
+
+.visitsNear{
+
+}
+
+.visitsNear-header{
+  font: normal normal normal 20px Somatic Rounded;
+  letter-spacing: 1.36px;
+  color: #3D3D3D;
+}
+
+.visitsNear-image{
+  width: 114px;
+  height: 85px;
+  margin-right: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+ion-icon{
+  color: #FEAA00;
+  opacity: 0.8;
+}
+
+
+ion-label{
+  font:  normal 500 14px Open Sans;
+  color: #3D3D3D;
+}
+
+ion-item{
+  height: 105px;
+  border-radius: 8px;
+  margin-right: 5px;
+  margin-left: 5px;
+  margin-bottom: 12px;
+}
+
+ion-content{
+  --ion-background-color:#F0F0F0;
+}
+
+ion-header{
+  --ion-background-color:#F0F0F0;
+}
