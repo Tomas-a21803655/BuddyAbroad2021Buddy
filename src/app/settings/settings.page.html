@@ -1,9 +1,68 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>settings</ion-title>
-  </ion-toolbar>
+<ion-header class="ion-no-border">
+    <ion-toolbar style="color:#F0F0F0;">
+        <div class="container">
+
+            <div class="container__image">
+                <img src="assets/logoandname.png">
+            </div>
+
+            <div class="container__text">
+                <ion-title class="ion-text-center" style="font:bold 22px 'Open Sans';color: #3D3D3D;">Settings
+                </ion-title>
+            </div>
+        </div>
+
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="notifications" class="belllogo"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-header>
 
+
 <ion-content>
+
+    <ion-list>
+        <ion-button class="settingsButton" color="white" expand="block">
+            <ion-icon class="settings-logo" name="notifications"></ion-icon>
+            <ion-label>Push Notifications</ion-label>
+            <ion-toggle class="settings-logo-open" color="success" slot="end" checked></ion-toggle>
+        </ion-button>
+
+        <ion-button class="settingsButton" color="white" expand="block">
+            <ion-icon class="settings-logo" name="key"></ion-icon>
+            <ion-label>Change Password</ion-label>
+            <ion-icon class="settings-logo-open" name="chevron-forward"></ion-icon>
+        </ion-button>
+
+        <ion-button class="settingsButton" color="white" expand="block">
+            <ion-icon class="settings-logo" name="card"></ion-icon>
+            <ion-label>Payment method</ion-label>
+            <ion-icon class="settings-logo-open" name="chevron-forward"></ion-icon>
+        </ion-button>
+
+        <ion-button class="settingsButton" color="white" expand="block">
+            <ion-icon class="settings-logo" name="help-circle"></ion-icon>
+            <ion-label>Help</ion-label>
+            <ion-icon class="settings-logo-open" name="chevron-forward"></ion-icon>
+        </ion-button>
+
+        <ion-button class="settingsButton" color="white" expand="block">
+            <ion-icon class="settings-logo" name="language"></ion-icon>
+            <ion-label>Language</ion-label>
+            <ion-icon class="settings-logo-open" name="chevron-forward"></ion-icon>
+        </ion-button>
+
+        <ion-button class="settingsButton" color="white" expand="block">
+            <ion-label style="text-align: center">Sign Out</ion-label>
+        </ion-button>
+
+        <ion-button class="settingsButton" color="white" expand="block">
+            <ion-label style="text-align: center;color: #FF1B1B">Delete Account</ion-label>
+        </ion-button>
+
+
+    </ion-list>
 
 </ion-content>
