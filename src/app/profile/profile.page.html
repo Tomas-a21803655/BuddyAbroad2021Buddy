@@ -1,27 +1,57 @@
 <ion-header class="ion-no-border">
-  <ion-toolbar style="color:#F0F0F0;">
-    <div class="container">
+    <ion-toolbar style="color:#F0F0F0;">
+        <div class="container">
 
-      <div class="container__image">
-        <img  src="assets/logoandname.png">
-      </div>
+            <div class="container__image">
+                <img src="assets/logoandname.png">
+            </div>
 
-      <div class="container__text">
-        <ion-title class="ion-text-center" style="font:bold 22px 'Open Sans';color: #3D3D3D;"></ion-title>
-      </div>
+            <div class="container__text">
+                <ion-title class="ion-text-center" style="font:bold 22px 'Open Sans';color: #3D3D3D;"></ion-title>
+            </div>
+        </div>
+
+        <ion-buttons slot="end">
+            <ion-button>
+                <ion-icon name="notifications" class="belllogo"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+
+    <div class="avatarCard">
+        <div>
+            <ion-avatar><img src="/assets/mockprofile.jpg"></ion-avatar>
+        </div>
     </div>
 
-    <ion-buttons slot="end">
-      <ion-button>
-        <ion-icon name="notifications" class="belllogo"></ion-icon>
-      </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <div class="align">
+        <ion-icon class="tripsIcon" name="trail-sign" style="color: #FEAA00"></ion-icon>
+        <ion-label style="font: normal 24px open sans;color: #3D3D3D;">14</ion-label>
+    </div>
 
-  <div class="avatarCard">
-  <ion-avatar><img src="/assets/mockprofile.jpg"></ion-avatar>
-  </div>
+    <div class="align">
+        <ion-icon class="starIcon" name="star" style="color: #FEAA00"></ion-icon>
+        <ion-label style="font: normal 24px open sans;color: #3D3D3D;">4.5</ion-label>
+    </div>
 
+    <div class="profileDiscription">
+        <ion-label style="font: normal 15px open sans;color: #3D3D3D;">Traveling is my passion, currently on a quest to
+            discover Portugal's best places...
+        </ion-label>
+    </div>
+
+    <div class="profileInfo">
+        <p>
+            <ion-icon name="location"></ion-icon>
+            <ion-label style="font: normal 15px open sans;color: #3D3D3D;">Lives in <Span
+                    style="font: bold 15px open sans;color: #3D3D3D;">Sparks, nevada, USA</Span></ion-label>
+        </p>
+        <p>
+            <ion-icon name="language"></ion-icon>
+            <ion-label style="font: normal 15px open sans;color: #3D3D3D;">Speaks <Span
+                    style="font: bold 15px open sans;color: #3D3D3D;">English, Portuguese</Span></ion-label>
+        </p>
+    </div>
 </ion-header>
 
 <ion-content>
