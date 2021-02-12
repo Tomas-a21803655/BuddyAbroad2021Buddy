@@ -40,7 +40,7 @@
 
     <div class="visitsNear">
         <ion-list>
-            <ion-item *ngFor="let homeTripCard of homeTripCards" lines="none" color="white">
+            <ion-item *ngFor="let homeTripCard of homeTripCards" lines="none" color="white" (click)="openVisitDetailsPage()">
                 <ion-img class="visitsNear-image" [src]="homeTripCard.image"></ion-img>
                 <ion-label>
                     <h2 style="font: bold 15px Open Sans;color: #3D3D3D;">{{homeTripCard.name}}</h2>

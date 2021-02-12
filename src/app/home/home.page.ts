@@ -24,4 +24,10 @@ export class HomePage implements OnInit {
     getAllhomeTripCards(): Observable<any> {
         return this.db.collection<any>('homeTripCards').valueChanges();
     }
+
+    public openVisitDetailsPage(): void {
+        console.log()
+        this.router.navigate(['/visit-details']);
+    }
+
 }
