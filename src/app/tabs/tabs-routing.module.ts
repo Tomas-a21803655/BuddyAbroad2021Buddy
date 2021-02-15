@@ -8,12 +8,12 @@ const routes: Routes = [
     component: TabsPage,
     children: [
       {
-        path: 'home',
-        loadChildren: () => import('../home/home.module').then(m => m.HomePageModule)
+        path: 'earnings',
+        loadChildren: () => import('../earnings/earnings.module').then(m => m.EarningsPageModule)
       },
       {
-        path: 'search',
-        loadChildren: () => import('../search/search.module').then(m => m.SearchPageModule)
+        path: 'create',
+        loadChildren: () => import('../create/create.module').then(m => m.CreatePageModule)
       },
       {
         path: 'bookings',
@@ -29,14 +29,14 @@ const routes: Routes = [
       },
       {
         path: '',
-        redirectTo: '/tabs/home',
+        redirectTo: '/tabs/bookings',
         pathMatch: 'full'
       }
     ]
   },
   {
     path: '',
-    redirectTo: '/tabs/home',
+    redirectTo: '/tabs/bookings',
     pathMatch: 'full'
   }
 ];

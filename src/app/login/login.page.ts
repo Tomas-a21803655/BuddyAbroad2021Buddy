@@ -46,7 +46,7 @@ export class LoginPage implements OnInit {
   public async tryLogin(value: { email: string, password: string }): Promise<void> {
     return await this.authService.doLogin(value)
         .then(res => {
-          this.router.navigate(['/tabs/home']);
+          this.router.navigate(['/tabs/bookings']);
         }, err => {
           this.errorMessage = err.message;
           console.log(err);
