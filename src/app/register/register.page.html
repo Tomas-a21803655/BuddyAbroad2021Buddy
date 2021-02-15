@@ -1,12 +1,8 @@
-<ion-header>
-  <ion-toolbar color="secondary">
-    <ion-title>Register</ion-title>
-  </ion-toolbar>
-</ion-header>
 <ion-content padding class="form-content">
+  <img class="center" src="/assets/logoandname.png"/>
   <form class="form" [formGroup]="validationsForm" (ngSubmit)="tryRegister(validationsForm.value)">
     <ion-item>
-      <ion-label position="floating" color="secondary">Email</ion-label>
+      <ion-label position="floating">Email</ion-label>
       <ion-input type="text" formControlName="email"></ion-input>
     </ion-item>
     <div class="validation-errors">
@@ -19,7 +15,7 @@
       </ng-container>
     </div>
     <ion-item>
-      <ion-label position="floating" color="secondary">Password</ion-label>
+      <ion-label position="floating" >Password</ion-label>
       <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
     <div class="validation-errors">
@@ -31,7 +27,7 @@
         </div>
       </ng-container>
     </div>
-    <ion-button class="submit-btn" expand="block" color="secondary"
+    <ion-button class="submit-btn" expand="block" color="warning"
                 type="submit" [disabled]="!validationsForm.valid">Register
     </ion-button>
     <label class="error-message">{{errorMessage}}</label>
