@@ -26,7 +26,6 @@ export class HomePage implements OnInit {
     }
 
     public openVisitDetailsPage(): void {
-        console.log()
         this.router.navigate(['/visit-details']);
     }
 

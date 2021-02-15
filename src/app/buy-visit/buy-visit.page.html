@@ -1,0 +1,87 @@
+<ion-header class="ion-no-border">
+    <ion-toolbar style="color:#F0F0F0;">
+        <div class="container">
+            <div class="container__image">
+              <ion-buttons slot="start">
+                <ion-button (click)="goback()">
+                  <ion-icon name="close-circle" class="close"></ion-icon>
+                </ion-button>
+              </ion-buttons>
+            </div>
+
+            <div class="container__text">
+                <ion-title class="ion-text-center" style="font:bold 22px 'Open Sans';color: #3D3D3D;">Bookings
+                </ion-title>
+            </div>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <div style="background: white;padding: 2px;box-shadow: 0px 3px 6px #C2C2C2;">
+        <ion-text style="margin-left: 2%;font: normal 600 20px Open Sans;color: #3D3D3D;">Order Details</ion-text>
+
+        <div class="orderDetails" style="margin: 2%;padding: 2%">
+            <ion-item color="transparent" style="background: transparent" lines="none">
+                <img class="visitsNear-image" src="/assets/toptrip3.jpg">
+                <ion-label>
+                    <h2 style="font: bold 15px Open Sans;color: #3D3D3D;">Wine Tour</h2>
+                    <p style="font: normal 14px Open Sans;color: #3D3D3D;">Visit 2 typical wine houses and sampl some of
+                        the wines of the Douro.</p>
+                </ion-label>
+            </ion-item>
+        </div>
+
+    </div>
+
+    <div style="background: white;margin-top: 3%;padding-bottom: 3%;box-shadow: 0px 3px 6px #C2C2C2;">
+        <p>
+            <ion-text style="margin-left: 2%;font: normal 600 20px Open Sans;color: #3D3D3D;">Booked Date</ion-text>
+        </p>
+        <ion-text style="margin-left: 3%;font: normal 600 15px Open Sans;color: #3D3D3D;">Tuesday, July 12, 2021, 16:15
+            PM, (GMT)
+        </ion-text>
+    </div>
+
+    <div style="background: white;margin-top: 3%;padding-bottom: 3%;box-shadow: 0px 3px 6px #C2C2C2;">
+        <p>
+            <ion-text style="margin-left: 2%;font: normal 600 20px Open Sans;color: #3D3D3D;">Billing Address</ion-text>
+        </p>
+        <ion-text style="margin-left: 3%;font: normal 600 15px Open Sans;color: #3D3D3D;">(530) 577-2760 984 Hilltop Dr,
+            Nevada(NV), 89705
+        </ion-text>
+    </div>
+
+    <div style="background: white;margin-top: 3%;padding-bottom: 3%;box-shadow: 0px 3px 6px #C2C2C2;">
+        <p>
+            <ion-text style="margin-left: 2%;font: normal 600 20px Open Sans;color: #3D3D3D;">Payment</ion-text>
+        </p>
+        <ion-text style="margin-left: 3%;font: normal 600 15px Open Sans;color: #3D3D3D;">VISA ending in XXXX</ion-text>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar class="footerBar">
+
+        <ion-title class="footerText">
+            <span style="margin-right: 2%;margin-left: 2%;font:bold 20px 'Open Sans';color: #3D3D3D;">Price breakdown</span>
+        </ion-title>
+
+        <ion-title class="footerText">
+            <span style="margin-right: 2%;margin-left: 2%;font:normal 20px 'Open Sans';color: #3D3D3D;">Adult X x € XX</span>
+        </ion-title>
+
+        <ion-title class="footerText">
+            <span style="margin-right: 2%;margin-left: 2%;font:normal 20px 'Open Sans';color: #3D3D3D;">Order Total</span>
+        </ion-title>
+
+        <ion-buttons>
+            <ion-button
+                    style="background-color: #FEAA00;border-radius: 24px;width: 100%;height: 40px;margin-bottom: 2%">
+                <span style="font:bold 20px 'Open Sans';color: #ffffff;text-transform:none;">Pay €€€</span>
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-footer>
