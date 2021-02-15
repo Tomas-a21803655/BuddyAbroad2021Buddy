@@ -1,0 +1,46 @@
+.close {
+  color: #2b2b2b;
+  opacity: 0.9;
+  width: 35px;
+  height: 35px;
+}
+
+.footerBar{
+}
+
+.footerBar::after {
+  content: "";
+  border-top-right-radius: 14px;
+  border-top-left-radius: 14px;
+  background: linear-gradient(90deg, rgba(249,187,21,1) 0%, rgba(255,204,124,1) 100%);
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.footerText{
+
+}
+
+th{
+  font: normal  600 15px Open Sans;
+  color: #3D3D3D;
+  text-align: left;
+}
+
+td{
+  font: normal 600 13px Open Sans;
+  color: #3D3D3D;
+  opacity: 0.77;
+  text-align: left;
+}
+
+span.a {
+  display: inline-flex;
+  border: 1px solid blue;
+  background-color: yellow;
+}
