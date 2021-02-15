@@ -3,11 +3,11 @@ import {NavController} from '@ionic/angular';
 import {Router} from '@angular/router';
 
 @Component({
-  selector: 'app-visit-details',
-  templateUrl: './visit-details.page.html',
-  styleUrls: ['./visit-details.page.scss'],
+  selector: 'app-plan-visit',
+  templateUrl: './plan-visit.page.html',
+  styleUrls: ['./plan-visit.page.scss'],
 })
-export class VisitDetailsPage implements OnInit {
+export class PlanVisitPage implements OnInit {
 
   constructor(private router: Router,private navCtrl:NavController) { }
 
@@ -18,8 +18,8 @@ export class VisitDetailsPage implements OnInit {
     this.navCtrl.pop();
   }
 
-  public openPlanVisitPage(): void {
-    this.router.navigate(['/plan-visit']);
+  public openBuyVisitPage(): void {
+    this.router.navigate(['/buy-visit']);
   }
 
 }
