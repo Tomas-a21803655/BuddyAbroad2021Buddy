@@ -23,4 +23,8 @@ export class BookingsPage implements OnInit {
   getAllhomeTripCards(): Observable<any> {
     return this.db.collection<any>('homeTripCards').valueChanges();
   }
+
+  public openVisitDetailsPage(): void {
+    this.router.navigate(['/visit-details']);
+  }
 }

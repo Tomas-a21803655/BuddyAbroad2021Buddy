@@ -27,14 +27,6 @@ const routes: Routes = [
     loadChildren: () => import('./visit-details/visit-details.module').then( m => m.VisitDetailsPageModule)
   },
   {
-    path: 'buy-visit',
-    loadChildren: () => import('./buy-visit/buy-visit.module').then( m => m.BuyVisitPageModule)
-  },
-  {
-    path: 'plan-visit',
-    loadChildren: () => import('./plan-visit/plan-visit.module').then( m => m.PlanVisitPageModule)
-  },
-  {
     path: 'create',
     loadChildren: () => import('./create/create.module').then( m => m.CreatePageModule)
   },

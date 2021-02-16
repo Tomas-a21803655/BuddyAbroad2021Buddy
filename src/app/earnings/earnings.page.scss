@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+  &__image {
+    margin-left: 19px;
+    margin-top: 5px;
+    width: 25%;
+    height: 25%;
+    overflow: hidden;
+    float: left;
+  }
+  &__text {
+    margin-top: 2%;
+    margin-left: 10%;
+    display: inline;
+  }
+}
+
+.belllogo {
+  color: #2b2b2b;
+  opacity: 0.9;
+  width: 27px;
+  height: 27px;
+}
+
+.vertical-center{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60%;
+}
+
+.center {
+  margin: auto;
+  width: 50%;
+}
