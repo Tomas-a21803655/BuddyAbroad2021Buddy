@@ -24,7 +24,7 @@
 <ion-content>
   <div class="visitsNear">
     <ion-list>
-      <ion-item *ngFor="let homeTripCard of homeTripCards" lines="none" color="white" (click)="openVisitDetailsPage()">
+      <ion-item *ngFor="let homeTripCard of homeTripCards | async; index as i" lines="none" color="white" (click)="openVisitDetailsPage()">
         <ion-img class="visitsNear-image" [src]="homeTripCard.image"></ion-img>
         <ion-label>
           <h2 style="font: bold 15px Open Sans;color: #3D3D3D;">{{homeTripCard.name}}</h2>
@@ -36,7 +36,7 @@
             </ion-chip>
             <ion-chip>
               <ion-label class="bottom-label"><span style="font: normal 14px Open Sans;color: #3D3D3D;">Status</span>
-                {{homeTripCard.status}}</ion-label>
+                Pending</ion-label>
             </ion-chip>
           </p>
         </ion-label>

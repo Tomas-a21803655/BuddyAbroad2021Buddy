@@ -4,11 +4,15 @@ import {Observable, Subject} from 'rxjs';
 import {AngularFireAuth} from '@angular/fire/auth';
 import {AngularFirestore} from '@angular/fire/firestore';
 import firebase from 'firebase';
+import {HomeTripCardsModel} from './shared/homeTripCards.model';
 
 @Injectable({
     providedIn: 'root'
 })
 export class FireStorageService {
+
+    private static USERS_KEY = 'users';
+    private static TRIPS_KEY = 'createdTrips';
 
     private unsubscribe: Subject<void> = new Subject<void>();
 
@@ -17,6 +21,22 @@ export class FireStorageService {
     public unsubscribeOnLogout(): void {
         this.unsubscribe.next();
         this.unsubscribe.complete();
+    }
+
+    public async createTrip(homeTripCard: HomeTripCardsModel): Promise<void> {
+        const currentUser = firebase.auth().currentUser;
+        homeTripCard.id = this.af.createId();
+        return await this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid)
+            .collection(FireStorageService.TRIPS_KEY).doc(homeTripCard.id).set(homeTripCard);
+    }
+
+    public getUserTrips(): Observable<Array<HomeTripCardsModel>> {
+        return this.angularAuth.user
+            .pipe(takeUntil(this.unsubscribe),
+                switchMap(user => {
+                    return this.af.collection(FireStorageService.USERS_KEY).doc(user.uid)
+                        .collection<HomeTripCardsModel>(FireStorageService.TRIPS_KEY).valueChanges();
+                }));
     }
 
 }

@@ -1,4 +1,5 @@
 export class HomeTripCardsModel {
+    public id?: any;
     public name?: string;
     public image?:string;
     public description?: string;
@@ -8,6 +9,7 @@ export class HomeTripCardsModel {
 
 
     constructor(homeTripCardsModel?: HomeTripCardsModel) {
+        this.id = homeTripCardsModel ? homeTripCardsModel.id : null;
         this.name = homeTripCardsModel ? homeTripCardsModel.name : null;
         this.image = homeTripCardsModel ? homeTripCardsModel.image : null;
         this.description = homeTripCardsModel ? homeTripCardsModel.description : null;

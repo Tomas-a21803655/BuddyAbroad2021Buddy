@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
+import {HomeTripCardsModel} from '../shared/homeTripCards.model';
+import {FireStorageService} from '../fire-storage.service';
 
 @Component({
   selector: 'app-bookings',
@@ -9,19 +11,14 @@ import {Observable} from 'rxjs';
   styleUrls: ['./bookings.page.scss'],
 })
 export class BookingsPage implements OnInit {
-  private homeTripCards;
+  public homeTripCards: Observable<Array<HomeTripCardsModel>>;
 
-  constructor(private router: Router, public db: AngularFirestore) {
+  constructor(public fireStorageService: FireStorageService,private router: Router, public db: AngularFirestore) {
   }
 
   ngOnInit() {
-    this.getAllhomeTripCards().subscribe((data) => {
-      this.homeTripCards = data;
-    });
-  }
-
-  getAllhomeTripCards(): Observable<any> {
-    return this.db.collection<any>('homeTripCards').valueChanges();
+    this.homeTripCards = this.fireStorageService.getUserTrips();
+    console.log(this.homeTripCards);
   }
 
   public openVisitDetailsPage(): void {
