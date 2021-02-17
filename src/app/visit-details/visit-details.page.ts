@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {NavController} from '@ionic/angular';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {HomeTripCardsModel} from '../shared/homeTripCards.model';
+import {FireStorageService} from '../fire-storage.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-visit-details',
@@ -9,17 +12,23 @@ import {Router} from '@angular/router';
 })
 export class VisitDetailsPage implements OnInit {
 
-  constructor(private router: Router,private navCtrl:NavController) { }
+  public trip: HomeTripCardsModel;
+
+
+  constructor(private router: Router,private navCtrl:NavController,
+              public fireStorageService: FireStorageService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
+    const tripId: string = this.route.snapshot.paramMap.get('id');
+    this.fireStorageService.getTripDetail(tripId).subscribe(trip => {
+      this.trip = trip;
+    });
+    // this.trip = this.fireStorageService.getTripDetail(tripId);
+    console.log(this.trip)
   }
 
   goback() {
     this.navCtrl.pop();
   }
-
-  public openPlanVisitPage(): void {
-    this.router.navigate(['/plan-visit']);
-  }
-
 }

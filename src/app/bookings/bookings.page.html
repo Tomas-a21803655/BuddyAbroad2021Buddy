@@ -24,8 +24,9 @@
 <ion-content>
   <div class="visitsNear">
     <ion-list>
-      <ion-item-sliding #slidingItem *ngFor="let homeTripCard of homeTripCards | async; index as i">
-      <ion-item  lines="none" color="white" (click)="openVisitDetailsPage()">
+      <ion-item-sliding #slidingItem *ngFor="let homeTripCard of homeTripCards | async; index as i"
+                        routerLink="/visit-details/{{homeTripCard.id}}">
+      <ion-item  lines="none" color="white" >
         <ion-img class="visitsNear-image" [src]="homeTripCard.image"></ion-img>
         <ion-label>
           <h2 style="font: bold 15px Open Sans;color: #3D3D3D;">{{homeTripCard.name}}</h2>

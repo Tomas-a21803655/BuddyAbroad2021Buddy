@@ -13,13 +13,11 @@
     <div style="padding: 3%">
 
         <div style="margin-bottom: 2%">
-            <ion-text style="font:Bold 25px 'Open Sans';color: #3D3D3D;">Wine Tour</ion-text>
+            <ion-text style="font:Bold 25px 'Open Sans';color: #3D3D3D;">{{trip?.name}}</ion-text>
         </div>
 
         <ion-text style="font:normal 15px 'Open Sans';color: #3D3D3D;">
-            Visit the oldest port wine cellar in Porto and taste the best wines of Portugal on
-            a wine tour of the city. Visit 2 typical wine houses and sample some of the wines of the Douro.
-            Pair a green wine with a selection of cheeses and smoked meats.
+            {{trip?.description}}
         </ion-text>
 
         <div style="margin-top: 5%">
@@ -31,50 +29,20 @@
                     <th>Group size</th>
                 </tr>
                 <tr style="text-align:center">
-                    <td>2 hours</td>
-                    <td>Up to 6 participants</td>
+                    <td>{{trip?.time}}</td>
+                    <td>{{trip?.size}}</td>
                 </tr>
             </table>
             <table style="width:100%;margin-top: 2%">
                 <tr>
-                    <th>Buddy speaks</th>
+                    <th>Price</th>
                     <th>Includes</th>
                 </tr>
                 <tr style="text-align:center">
-                    <td>English, Portuguese, Spanish</td>
-                    <td>Wine tastings and snacks Ticket to Port Wine Cellar</td>
+                    <td>{{trip?.price}}</td>
+                    <td>{{trip?.details}}</td>
                 </tr>
             </table>
-
         </div>
-
-        <div style="margin-top: 5%">
-            <ion-text style="font: normal 500 20px Open Sans;color: #3D3D3D;">Your Buddy</ion-text>
-        </div>
-
-        <span class="a">
-          <ion-avatar>
-          <img src="/assets/mockprofile.jpg">
-          </ion-avatar>
-      </span>
-        <span class="a">
-       <ion-text style="font: normal 600 22px Open Sans;color: #3D3D3D;padding: 2%">Ana</ion-text>
-    </span>
-
-
     </div>
 </ion-content>
-
-<ion-footer>
-    <ion-toolbar class="footerBar">
-        <ion-title class="footerText" style="font:bold 15px 'Open Sans';color: #3D3D3D;">From
-            <span style="margin-right: 2%;margin-left: 2%;font:bold 20px 'Open Sans';color: #3D3D3D;">€39</span>
-            per person
-        </ion-title>
-        <ion-buttons slot="end">
-            <ion-button style="background-color: #FEAA00;border-radius: 24px;width: 165px;height: 40px;" (click)="openPlanVisitPage()">
-                <span style="font:bold 20px 'Open Sans';color: #ffffff;text-transform:none;">Book Now</span>
-            </ion-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-footer>

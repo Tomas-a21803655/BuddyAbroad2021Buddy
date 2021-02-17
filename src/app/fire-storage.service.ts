@@ -45,4 +45,13 @@ export class FireStorageService {
             .collection(FireStorageService.TRIPS_KEY).doc(tripId).delete();
     }
 
+    getTripDetail(tripId: string): Observable<HomeTripCardsModel> {
+        return this.angularAuth.user
+            .pipe(takeUntil(this.unsubscribe),
+                switchMap(user => {
+                    return this.af.collection(FireStorageService.USERS_KEY).doc(user.uid)
+                        .collection<HomeTripCardsModel>(FireStorageService.TRIPS_KEY).doc<HomeTripCardsModel>(tripId).valueChanges();
+                }));
+    }
+
 }
