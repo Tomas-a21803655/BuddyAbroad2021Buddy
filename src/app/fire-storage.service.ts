@@ -39,4 +39,10 @@ export class FireStorageService {
                 }));
     }
 
+    public async deleteTrip(tripId: any): Promise<void> {
+        const currentUser = firebase.auth().currentUser;
+        return await this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid)
+            .collection(FireStorageService.TRIPS_KEY).doc(tripId).delete();
+    }
+
 }

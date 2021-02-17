@@ -6,6 +6,9 @@ export class HomeTripCardsModel {
     public price?: number;
     public time?: number;
     public rating?: number;
+    public details?: string;
+    public size?: number;
+
 
 
     constructor(homeTripCardsModel?: HomeTripCardsModel) {
@@ -16,5 +19,7 @@ export class HomeTripCardsModel {
         this.price = homeTripCardsModel ? homeTripCardsModel.price : null;
         this.time = homeTripCardsModel ? homeTripCardsModel.time : null;
         this.rating = homeTripCardsModel ? homeTripCardsModel.rating : null;
+        this.details = homeTripCardsModel ? homeTripCardsModel.details : null
+        this.size = homeTripCardsModel ? homeTripCardsModel.size : null;
     }
 }

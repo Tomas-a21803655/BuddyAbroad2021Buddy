@@ -6,46 +6,77 @@
         </div>
     </div>
 
-    <div style="padding: 3%">
+    <form [formGroup]="validationsForm" (ngSubmit)="onSubmit(validationsForm.value)">
+        <div style="padding: 3%">
 
-        <div style="margin-bottom: 2%">
-            <ion-text style="font:Bold 25px 'Open Sans';color: #3D3D3D;">Tour Name</ion-text>
+            <div style="margin-bottom: 2%">
+                <ion-item lines="none">
+                    <ion-label position="floating" style="font:Bold 25px 'Open Sans';color: #3D3D3D;">Tour Name
+                    </ion-label>
+                    <ion-input type="text" formControlName="name"></ion-input>
+                </ion-item>
+            </div>
+
+            <ion-item lines="none">
+                <ion-label position="floating" style="font:normal 15px 'Open Sans';color: #3D3D3D;">Write tour
+                    description
+                </ion-label>
+                <ion-input type="text" formControlName="description"></ion-input>
+            </ion-item>
+
+            <div style="margin-top: 5%">
+                <ion-text style="font: normal 500 20px Open Sans;color: #3D3D3D;">About this visit:</ion-text>
+
+                <ion-grid style="width:100%;margin-top: 2%">
+                    <ion-row style="position: center">
+                        <ion-col>Duration</ion-col>
+                        <ion-col>Group size</ion-col>
+                    </ion-row>
+                    <ion-row style="text-align:center">
+                        <ion-col class="downCol">
+                            <ion-item lines="none">
+                                <ion-label position="floating">Add Duration</ion-label>
+                                <ion-input type="number" formControlName="time"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col class="downCol">
+                            <ion-item lines="none">
+                                <ion-label position="floating">Define Group size</ion-label>
+                                <ion-input type="number" formControlName="size"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <ion-grid style="width:100%;margin-top: 2%">
+                    <ion-row>
+                        <ion-col>Price</ion-col>
+                        <ion-col>Includes</ion-col>
+                    </ion-row>
+                    <ion-row style="text-align:center">
+                        <ion-col class="downCol">
+                            <ion-item lines="none">
+                                <ion-label position="floating">Add Price</ion-label>
+                                <ion-input type="number" formControlName="price"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col class="downCol">
+                            <ion-item lines="none">
+                                <ion-label position="floating">Add Details</ion-label>
+                                <ion-input type="text" formControlName="details"></ion-input>
+                            </ion-item>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+                <ion-button class="submit-btn" type="submit" expand="block" color="warning"
+                            style="margin-top: 5%;font:bold 20px 'Open Sans';text-transform:none;">
+                    Create
+                </ion-button>
+            </div>
         </div>
 
-        <ion-text style="font:normal 15px 'Open Sans';color: #3D3D3D;">
-            Write tour description
-        </ion-text>
+    </form>
 
-        <div style="margin-top: 5%">
-            <ion-text style="font: normal 500 20px Open Sans;color: #3D3D3D;">About this visit:</ion-text>
 
-            <ion-grid style="width:100%;margin-top: 2%">
-                <ion-row style="position: center">
-                    <ion-col>Duration</ion-col>
-                    <ion-col>Group size</ion-col>
-                </ion-row>
-                <ion-row style="text-align:center">
-                    <ion-col class="downCol">Add Duration</ion-col>
-                    <ion-col class="downCol">Define Group Size</ion-col>
-                </ion-row>
-            </ion-grid>
-            <ion-grid style="width:100%;margin-top: 2%">
-                <ion-row>
-                    <ion-col>Buddy speaks</ion-col>
-                    <ion-col>Includes</ion-col>
-                </ion-row>
-                <ion-row style="text-align:center">
-                    <ion-col class="downCol">English, Portuguese, Spanish</ion-col>
-                    <ion-col class="downCol">Add Details</ion-col>
-                </ion-row>
-            </ion-grid>
-
-            <ion-button expand="block" color="warning"
-                        style="margin-top: 5%;font:bold 20px 'Open Sans';text-transform:none;"
-                        (click)="addItem()">Create
-            </ion-button>
-        </div>
-
-    </div>
 </ion-content>
 

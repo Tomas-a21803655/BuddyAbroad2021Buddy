@@ -4,6 +4,7 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {Observable} from 'rxjs';
 import {HomeTripCardsModel} from '../shared/homeTripCards.model';
 import {FireStorageService} from '../fire-storage.service';
+import {IonItemSliding} from '@ionic/angular';
 
 @Component({
   selector: 'app-bookings',
@@ -23,5 +24,10 @@ export class BookingsPage implements OnInit {
 
   public openVisitDetailsPage(): void {
     this.router.navigate(['/visit-details']);
+  }
+
+  public async removeTrip(slidingItem: IonItemSliding, trip: HomeTripCardsModel, index: number): Promise<void> {
+    await this.fireStorageService.deleteTrip(trip.id);
+    return await slidingItem.close();
   }
 }
