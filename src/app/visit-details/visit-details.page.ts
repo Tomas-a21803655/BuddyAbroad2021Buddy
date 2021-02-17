@@ -24,8 +24,6 @@ export class VisitDetailsPage implements OnInit {
     this.fireStorageService.getTripDetail(tripId).subscribe(trip => {
       this.trip = trip;
     });
-    // this.trip = this.fireStorageService.getTripDetail(tripId);
-    console.log(this.trip)
   }
 
   goback() {
