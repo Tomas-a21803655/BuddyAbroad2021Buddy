@@ -23,6 +23,11 @@ export class FireStorageService {
         this.unsubscribe.complete();
     }
 
+    public async assignNewAccBalance(): Promise<void> {
+        const currentUser = firebase.auth().currentUser;
+        return await this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid).set({earnings: 0});
+    }
+
     public async createTrip(homeTripCard: HomeTripCardsModel): Promise<void> {
         const currentUser = firebase.auth().currentUser;
         homeTripCard.id = this.af.createId();

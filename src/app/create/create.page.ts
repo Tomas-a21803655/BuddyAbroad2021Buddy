@@ -59,6 +59,7 @@ export class CreatePage implements OnInit {
     }
 
     async onSubmit(value) {
+
         const trip: HomeTripCardsModel = {
             image: 'assets/logoandname.png',
             rating: 0,
@@ -75,6 +76,7 @@ export class CreatePage implements OnInit {
                 this.router.navigate(['/tabs/bookings']);
             }
         );
+
     }
 
 }
