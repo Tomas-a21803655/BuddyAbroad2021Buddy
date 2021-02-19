@@ -18,6 +18,7 @@ export class FireStorageService {
 
     constructor(public af: AngularFirestore, public angularAuth: AngularFireAuth) {
     }
+
     public unsubscribeOnLogout(): void {
         this.unsubscribe.next();
         this.unsubscribe.complete();
@@ -57,6 +58,11 @@ export class FireStorageService {
                     return this.af.collection(FireStorageService.USERS_KEY).doc(user.uid)
                         .collection<HomeTripCardsModel>(FireStorageService.TRIPS_KEY).doc<HomeTripCardsModel>(tripId).valueChanges();
                 }));
+    }
+
+    public getUserEarnings(): Observable<any> {
+        const currentUser = firebase.auth().currentUser;
+        return this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid).valueChanges();
     }
 
 }

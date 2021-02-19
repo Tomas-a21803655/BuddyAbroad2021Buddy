@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {Observable} from 'rxjs';
+import {HomeTripCardsModel} from '../shared/homeTripCards.model';
+import {switchMap, takeUntil} from 'rxjs/operators';
+import {FireStorageService} from '../fire-storage.service';
+import {AngularFirestore} from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-earnings',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EarningsPage implements OnInit {
 
-  constructor() { }
+   public userEarnings;
+
+
+  constructor(public fireStorageService: FireStorageService,public af: AngularFirestore) { }
 
   ngOnInit() {
+    this.fireStorageService.getUserEarnings().subscribe((data) => {
+     this.userEarnings = data.earnings;
+    });
   }
 
+
 }
+
