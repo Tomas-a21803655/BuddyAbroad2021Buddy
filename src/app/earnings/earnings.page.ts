@@ -18,7 +18,7 @@ export class EarningsPage implements OnInit {
   constructor(public fireStorageService: FireStorageService,public af: AngularFirestore) { }
 
   ngOnInit() {
-    this.fireStorageService.getUserEarnings().subscribe((data) => {
+    this.fireStorageService.getUserDocInfo().subscribe((data) => {
      this.userEarnings = data.earnings;
     });
   }
