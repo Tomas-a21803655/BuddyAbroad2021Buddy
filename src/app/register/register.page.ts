@@ -29,7 +29,7 @@ export class RegisterPage implements OnInit {
         private authService: FireAuthService,
         private formBuilder: FormBuilder,
         private router: Router,
-        public fireStorageService: FireStorageService
+            public fireStorageService: FireStorageService
     ) {
     }
 
@@ -48,15 +48,7 @@ export class RegisterPage implements OnInit {
         });
     }
 
-    public tryRegister(value
-                           :
-                           {
-                               email: string, password
-                                   :
-                                   string
-                           }
-    ):
-        void {
+    public tryRegister(value: { email: string, password: string }): void {
         this.authService.doRegister(value)
             .then(async res => {
                 console.log(res);
