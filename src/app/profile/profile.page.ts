@@ -14,8 +14,6 @@ import {Observable} from 'rxjs';
 
 export class ProfilePage implements OnInit {
 
-  public validationsForm: FormGroup;
-
   public userName;
   public userDescription;
   public userHome;
@@ -23,10 +21,7 @@ export class ProfilePage implements OnInit {
   public userRating;
   public userImage;
 
-
-
   constructor(
-      private formBuilder: FormBuilder,
       public fireStorageService: FireStorageService,
       public router: Router,
   ) { }
@@ -41,48 +36,6 @@ export class ProfilePage implements OnInit {
       this.userImage = data.image;
     });
 
-    this.validationsForm = this.formBuilder.group({
-      name: new FormControl('', Validators.compose([
-        Validators.required,
-      ])),
-      description: new FormControl('', Validators.compose([
-        Validators.required
-      ])),
-      home: new FormControl('', Validators.compose([
-        Validators.required
-      ])),
-      languages: new FormControl('', Validators.compose([
-        Validators.required
-      ])),
-    });
-  }
-
-  async onSubmit(value) {
-
-    const profile = {
-      image: 'assets/mockprofile.jpg',
-      rating: 0,
-      home: value.home,
-      name: value.name,
-      description: value.description,
-      languages: value.languages,
-    };
-    await this.fireStorageService.createProfile(profile).then(
-        () => {
-          this.resetFields();
-          this.router.navigate(['/tabs/profile']);
-        }
-    );
-
-  }
-
-  resetFields(){
-    this.validationsForm = this.formBuilder.group({
-      name: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      home: new FormControl('', Validators.required),
-      languages: new FormControl('', Validators.required),
-    });
   }
 
 }
