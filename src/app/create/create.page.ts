@@ -4,6 +4,7 @@ import {FireStorageService} from '../fire-storage.service';
 import {HomeTripCardsModel} from '../shared/homeTripCards.model';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import firebase from 'firebase';
 
 @Component({
     selector: 'app-create',
@@ -59,7 +60,7 @@ export class CreatePage implements OnInit {
     }
 
     async onSubmit(value) {
-
+        const currentUser = firebase.auth().currentUser;
         const trip: HomeTripCardsModel = {
             image: 'assets/logoandname.png',
             rating: 0,
@@ -69,6 +70,7 @@ export class CreatePage implements OnInit {
             size: value.size,
             price: value.price,
             details: value.details,
+            createdBy: currentUser.uid,
         };
         await this.fireStorageService.createTrip(trip).then(
             () => {
