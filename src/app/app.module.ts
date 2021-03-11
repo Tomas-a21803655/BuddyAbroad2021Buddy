@@ -13,6 +13,7 @@ import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {AngularFireDatabaseModule} from '@angular/fire/database';
 import {AngularFireStorageModule} from '@angular/fire/storage';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export const firebaseConfig = {
     apiKey: 'AIzaSyA2dv29iU-p4iSRjCRSdwYWnBpqLZpZ41o',
@@ -36,7 +37,8 @@ export const firebaseConfig = {
         AngularFirestoreModule,
         AngularFireDatabaseModule,
         AngularFireStorageModule,
-        AppRoutingModule],
+        AppRoutingModule,
+        BrowserAnimationsModule],
     providers: [
         StatusBar,
         SplashScreen,

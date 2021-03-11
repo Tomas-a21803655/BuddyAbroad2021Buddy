@@ -13,6 +13,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/animations": "^11.2.5",
     "@angular/common": "~10.0.0",
     "@angular/core": "~10.0.0",
     "@angular/fire": "^6.1.4",
@@ -26,9 +27,11 @@
     "@ionic-native/status-bar": "^5.0.0",
     "@ionic/angular": "^5.0.0",
     "@ionic/storage": "^2.3.1",
+    "bootstrap": "4.1.1",
     "cordova-plugin-camera": "^5.0.1",
     "cordova-sqlite-storage": "^5.1.0",
     "firebase": "^8.2.1",
+    "ngx-bootstrap": "^6.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
