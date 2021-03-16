@@ -47,17 +47,17 @@
 
     </div>
     <ion-list>
-        <ion-list-header style="font: normal 500 20px OpenSans-Regular;color: #3D3D3D;">
+        <ion-list-header style="font: normal 500 20px OpenSans-Regular;color: #3D3D3D;margin-right: 3%">
             Enrolled Tourists
         </ion-list-header>
 
-        <ion-item lines="none" style="font-family: OpenSans-Regular">
+        <ion-item lines="none" style="font-family: OpenSans-Regular" *ngFor="let userEnrolled of allUsersEnrolled; let i = index">
             <ion-avatar slot="start">
-                <img src="/assets/mockprofile.jpg">
+                <img src="{{allUsersEnrolledInfo[i].image}}" alt="no photo">
             </ion-avatar>
             <ion-label>
-                <h2>User Name</h2>
-                <h3>Date - Time - Status</h3>
+                <h2>{{allUsersEnrolledInfo[i].name}}</h2>
+                <h3>{{userEnrolled.date}} - {{userEnrolled.time}} - {{userEnrolled.status}}</h3>
             </ion-label>
         </ion-item>
     </ion-list>
