@@ -51,13 +51,13 @@
             Enrolled Tourists
         </ion-list-header>
 
-        <ion-item lines="none" style="font-family: OpenSans-Regular" *ngFor="let userEnrolled of allUsersEnrolled; let i = index">
+        <ion-item lines="none" style="font-family: OpenSans-Regular" *ngFor="let userEnrolled of allUsersEnrolledInfo; let i = index">
             <ion-avatar slot="start">
-                <img src="{{allUsersEnrolledInfo[i].image}}" alt="no photo">
+                <img src="{{userEnrolled.image}}" alt="no photo">
             </ion-avatar>
             <ion-label>
-                <h2>{{allUsersEnrolledInfo[i].name}}</h2>
-                <h3>{{userEnrolled.date}} - {{userEnrolled.time}} - {{userEnrolled.status}}</h3>
+                <h2>{{userEnrolled.name}}</h2>
+                <h3>{{allUsersEnrolled[i].date}} - {{allUsersEnrolled[i].time}} - {{allUsersEnrolled[i].status}}</h3>
             </ion-label>
         </ion-item>
     </ion-list>
