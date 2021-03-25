@@ -51,14 +51,22 @@
             Enrolled Tourists
         </ion-list-header>
 
-        <ion-item lines="none" style="font-family: OpenSans-Regular" *ngFor="let userEnrolled of allUsersEnrolledInfo; let i = index">
-            <ion-avatar slot="start">
-                <img src="{{userEnrolled.image}}" alt="no photo">
-            </ion-avatar>
-            <ion-label>
-                <h2>{{userEnrolled.name}}</h2>
-                <h3>{{allUsersEnrolled[i].date}} - {{allUsersEnrolled[i].time}} - {{allUsersEnrolled[i].status}}</h3>
-            </ion-label>
-        </ion-item>
+        <section *ngFor="let userEnrolled of allUsersEnrolledInfo; let i = index" >
+            <ion-item lines="none" style="font-family: OpenSans-Regular" *ngIf="allUsersEnrolled[i].status != 'Complete'"
+                      >
+                <ion-avatar slot="start">
+                    <img src="{{userEnrolled.image}}" alt="no photo">
+                </ion-avatar>
+                <ion-label>
+                    <h2>{{userEnrolled.name}}</h2>
+                    <h3>{{allUsersEnrolled[i].date}} - {{allUsersEnrolled[i].time}}
+                        - {{allUsersEnrolled[i].status}}</h3>
+                </ion-label>
+                <ion-button color="warning" class="buttons"
+                            (click)="endTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy)"
+                            routerLink="/tabs/bookings">End Trip
+                </ion-button>
+            </ion-item>
+        </section>
     </ion-list>
 </ion-content>

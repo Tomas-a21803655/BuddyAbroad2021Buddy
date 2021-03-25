@@ -78,4 +78,18 @@ export class FireStorageService {
         return await this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid).update(profile);
     }
 
+    public async updateTripStatus(statusCode, tripId, touristId) {
+        const currentUser = firebase.auth().currentUser;
+        const field = {
+            status: statusCode,
+        };
+        console.log('user ->',tripId,' //// ',touristId)
+        // buddy
+        await this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid)
+            .collection('buddyScheduledTrips').doc(tripId).update(field);
+        // user
+        await this.af.collection(FireStorageService.USERS_KEY).doc(touristId)
+            .collection('touristScheduledTrips').doc(tripId).update(field);
+    }
+
 }

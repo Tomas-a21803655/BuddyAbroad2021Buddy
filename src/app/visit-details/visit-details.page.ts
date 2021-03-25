@@ -58,6 +58,9 @@ export class VisitDetailsPage implements OnInit {
             });
     }
 
+    endTrip(tripId,touristId) {
+        this.fireStorageService.updateTripStatus('Complete',tripId,touristId);
+    }
 
     goback() {
         this.navCtrl.pop();
