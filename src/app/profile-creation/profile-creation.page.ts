@@ -18,6 +18,8 @@ export class ProfileCreationPage implements OnInit {
     }
 
     ngOnInit() {
+
+
         this.validationsForm = this.formBuilder.group({
             name: new FormControl('', Validators.compose([
                 Validators.required,
@@ -34,33 +36,33 @@ export class ProfileCreationPage implements OnInit {
         });
     }
 
-  async onSubmit(value) {
+    async onSubmit(value) {
 
-    const profile = {
-      image: 'assets/mockprofile.jpg',
-      rating: 0,
-      home: value.home,
-      name: value.name,
-      description: value.description,
-      languages: value.languages,
-    };
-    await this.fireStorageService.createProfile(profile).then(
-        () => {
-          this.resetFields();
-          this.router.navigate(['/tabs/profile']);
-        }
-    );
+        const profile = {
+            image: 'assets/mockprofile.jpg',
+            rating: 0,
+            home: value.home,
+            name: value.name,
+            description: value.description,
+            languages: value.languages,
+        };
+        await this.fireStorageService.createProfile(profile).then(
+            () => {
+                this.resetFields();
+                this.router.navigate(['/tabs/profile']);
+            }
+        );
 
-  }
+    }
 
-  resetFields(){
-    this.validationsForm = this.formBuilder.group({
-      name: new FormControl('', Validators.required),
-      description: new FormControl('', Validators.required),
-      home: new FormControl('', Validators.required),
-      languages: new FormControl('', Validators.required),
-    });
-  }
+    resetFields() {
+        this.validationsForm = this.formBuilder.group({
+            name: new FormControl('', Validators.required),
+            description: new FormControl('', Validators.required),
+            home: new FormControl('', Validators.required),
+            languages: new FormControl('', Validators.required),
+        });
+    }
 
     goback() {
         this.navCtrl.pop();

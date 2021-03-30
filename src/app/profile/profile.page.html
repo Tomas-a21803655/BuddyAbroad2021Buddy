@@ -1,57 +1,67 @@
-<ion-header class="ion-no-border">
-    <ion-toolbar style="color:#F0F0F0;">
-        <div class="container">
+    <ion-header class="ion-no-border">
+        <ion-toolbar style="color:#F0F0F0;">
+            <div class="container">
 
-            <div class="container__image">
-                <img src="assets/logoandname.png">
+                <div class="container__image">
+                    <img src="assets/logoandname.png">
+                </div>
+
+                <div class="container__text">
+                    <ion-title class="ion-text-center" style="font:bold 22px OpenSans-Bold;color: #3D3D3D;"></ion-title>
+                </div>
             </div>
 
-            <div class="container__text">
-                <ion-title class="ion-text-center" style="font:bold 22px OpenSans-Bold;color: #3D3D3D;"></ion-title>
+            <ion-buttons slot="end">
+                <ion-button>
+                    <ion-icon name="notifications" class="belllogo"></ion-icon>
+                </ion-button>
+            </ion-buttons>
+        </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+        <div class="avatarCard">
+            <div>
+                <ion-avatar>
+                    <img src="{{this.user.image}}" alt="img">
+                </ion-avatar>
             </div>
         </div>
 
-        <ion-buttons slot="end">
-            <ion-button>
-                <ion-icon name="notifications" class="belllogo"></ion-icon>
+        <ion-card style="text-align: center;box-shadow: none;font-family: OpenSans-Regular,serif">
+            <ion-card-header>
+                <ion-card-title>{{this.user.name}}</ion-card-title>
+            </ion-card-header>
+            <div>
+                <ion-item lines="none">
+                    <ion-label class="ion-text-wrap">
+                        <h2>Speaks</h2>
+                        <p>{{this.user.languages}}</p>
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none">
+                    <ion-label class="ion-text-wrap">
+                        <h2>Lives</h2>
+                        <p>{{this.user.home}}</p>
+                    </ion-label>
+                </ion-item>
+                <ion-item lines="none">
+                    <ion-label>
+                        <h2>Rating</h2>
+                        <p>{{this.user.rating}}
+                            <ion-icon name="star"></ion-icon>
+                        </p>
+                    </ion-label>
+                </ion-item>
+            </div>
+            <ion-card-content>
+                {{this.user.description}}
+            </ion-card-content>
+
+            <ion-button style="text-transform: none;font: normal 15px OpenSans-Regular;--box-shadow: none" expand="block" color="white"
+                        routerLink="/profile-creation">
+                Edit Profile
             </ion-button>
-        </ion-buttons>
-    </ion-toolbar>
-</ion-header>
+        </ion-card>
 
-<ion-content>
-    <div class="avatarCard">
-        <div>
-            <ion-avatar><img src="{{this.userImage}}"></ion-avatar>
-        </div>
-    </div>
-
-    <div class="profileName">
-        <ion-label style="font: bold 20px OpenSans-Bold;color: #3D3D3D;text-align: center">{{this.userName}}
-        </ion-label>
-    </div>
-
-    <div class="profileDiscription">
-        <ion-label style="font: normal 15px OpenSans-Regular;color: #3D3D3D;">{{this.userDescription}}
-        </ion-label>
-    </div>
-
-    <div class="profileInfo">
-        <p>
-            <ion-icon name="location"></ion-icon>
-            <ion-label style="font: normal 15px OpenSans-Regular;color: #3D3D3D;">Lives in <Span
-                    style="font: bold 15px OpenSans-Bold;color: #3D3D3D;">{{this.userHome}}</Span></ion-label>
-        </p>
-        <p>
-            <ion-icon name="language"></ion-icon>
-            <ion-label style="font: normal 15px OpenSans-Regular;color: #3D3D3D;">Speaks <Span
-                    style="font: bold 15px OpenSans-Bold;color: #3D3D3D;">{{this.userLanguages}}</Span></ion-label>
-        </p>
-        <ion-button style="margin-top: 10%;text-transform: none;font: normal 15px OpenSans-Regular" class="edit-btn" color="warning"
-                    routerLink="/profile-creation">
-            Edit Profile
-        </ion-button>
-    </div>
-
-
-</ion-content>
+    </ion-content>
