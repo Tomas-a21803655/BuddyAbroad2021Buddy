@@ -21,7 +21,7 @@
                 <ion-card-title>
                     <ion-item>
                         <ion-label position="stacked">Name</ion-label>
-                        <ion-input>{{this.user.name}}</ion-input>
+                        <ion-input formControlName="name" placeholder="{{this.user.name}}"></ion-input>
                     </ion-item>
                 </ion-card-title>
             </ion-card-header>
@@ -29,15 +29,17 @@
             <ion-card-content>
                 <ion-item class="ion-text-wrap">
                     <ion-label position="stacked">Profile Description</ion-label>
-                    <ion-input>{{this.user.description}}</ion-input>
+                    <ion-input type="text" formControlName="description"
+                               placeholder="{{this.user.description}}"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="stacked">Country</ion-label>
-                    <ion-input>{{this.user.home}}</ion-input>
+                    <ion-input type="text" formControlName="home" placeholder="{{this.user.home}}"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label position="stacked">Spoken Languages</ion-label>
-                    <ion-input>{{this.user.languages}}</ion-input>
+                    <ion-input type="text" formControlName="languages"
+                               placeholder="{{this.user.languages}}"></ion-input>
                 </ion-item>
             </ion-card-content>
 
