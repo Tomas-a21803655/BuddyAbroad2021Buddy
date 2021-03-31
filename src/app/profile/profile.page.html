@@ -27,39 +27,39 @@
     <div class="avatarCard">
         <div>
             <ion-avatar>
-                <img src="{{this.user.image}}" alt="profile picture">
+                <img src="{{user.image}}" alt="profile picture">
             </ion-avatar>
         </div>
     </div>
 
     <ion-card style="text-align: center;box-shadow: none;font-family: OpenSans-Regular,serif">
         <ion-card-header>
-            <ion-card-title>{{this.user.name}}</ion-card-title>
+            <ion-card-title>{{user.name}}</ion-card-title>
         </ion-card-header>
         <div>
             <ion-item lines="none">
                 <ion-label class="ion-text-wrap">
                     <h2>Speaks</h2>
-                    <p>{{this.user.languages}}</p>
+                    <p>{{user.languages}}</p>
                 </ion-label>
             </ion-item>
             <ion-item lines="none">
                 <ion-label class="ion-text-wrap">
                     <h2>Lives</h2>
-                    <p>{{this.user.home}}</p>
+                    <p>{{user.home}}</p>
                 </ion-label>
             </ion-item>
             <ion-item lines="none">
                 <ion-label>
                     <h2>Rating</h2>
-                    <p>{{this.user.rating}}
+                    <p>{{user.rating}}
                         <ion-icon name="star"></ion-icon>
                     </p>
                 </ion-label>
             </ion-item>
         </div>
         <ion-card-content>
-            {{this.user.description}}
+            {{user.description}}
         </ion-card-content>
 
     </ion-card>
