@@ -17,15 +17,13 @@ export class ProfilePage implements OnInit {
 
     constructor(
         public fireStorageService: FireStorageService,
-        public router: Router,
-    ) {
+        public router: Router,) {
     }
 
-    async ngOnInit() {
-        await this.fireStorageService.getUserDocInfo().subscribe((data) => {
+    ngOnInit() {
+        this.fireStorageService.getUserDocInfo().subscribe((data) => {
             this.user = data;
         });
-
     }
 
 }

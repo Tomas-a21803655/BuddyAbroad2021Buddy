@@ -35,7 +35,7 @@ const routes: Routes = [
     loadChildren: () => import('./earnings/earnings.module').then( m => m.EarningsPageModule)
   },
   {
-    path: 'profile-creation',
+    path: 'profile-creation/:user',
     loadChildren: () => import('./profile-creation/profile-creation.module').then( m => m.ProfileCreationPageModule)
   },
 ];
