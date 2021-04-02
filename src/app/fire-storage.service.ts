@@ -83,7 +83,6 @@ export class FireStorageService {
         const field = {
             status: statusCode,
         };
-        console.log('user ->',tripId,' //// ',touristId)
         // buddy
         await this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid)
             .collection('buddyScheduledTrips').doc(tripId).update(field);

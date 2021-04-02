@@ -1,13 +1,45 @@
 <ion-content>
-    <div class="vertical-center"
-         style="width: 100%;height: 226px;background-color: white;box-shadow: 0px 3px 6px #00000029;">
-        <div class="center">
-            <ion-icon style="margin-left: 20%;width: 113px;height: 113px;" name="images"></ion-icon>
-        </div>
-    </div>
-
     <form [formGroup]="validationsForm" (ngSubmit)="onSubmit(validationsForm.value)">
-        <div style="padding: 3%">
+
+        <section>
+            <ion-card class="ion-text-center" *ngIf="!isUploading && !isUploaded">
+                <ion-card-content>
+                    <div class="center">
+                        <ion-icon style=";width: 113px;height: 113px;" name="images"></ion-icon>
+                    </div>
+                    <ion-button color="white" shape="round" style="--box-shadow: none">
+                        <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)"/>
+                    </ion-button>
+                </ion-card-content>
+            </ion-card>
+
+            <ion-card class="ion-text-center" *ngIf="isUploading && !isUploaded">
+                <ion-card-header>
+                    <ion-card-title>Selected File:<b>{{ fileName }}</b></ion-card-title>
+                </ion-card-header>
+
+                <ion-card-content>
+                    <div *ngIf="percentage | async as pct">
+                        Progress: {{ pct | number }}%
+                        <ion-progress-bar value="{{ pct / 100 }}"></ion-progress-bar>
+                    </div>
+                    <div *ngIf="snapshot | async as snap">
+                        File Size: {{ snap.totalBytes | fileSizePipe }} Transfered:
+                        {{ snap.bytesTransferred | fileSizePipe }}
+                    </div>
+                </ion-card-content>
+
+            </ion-card>
+            <ion-card class="ion-text-center" *ngIf="!isUploading && isUploaded">
+                <ion-card-content>
+                    <div *ngIf="UploadedFileURL | async as url">
+                        <img [src]="url"/>
+                    </div>
+                </ion-card-content>
+            </ion-card>
+        </section>
+
+        <div style="padding-right: 3%;padding-left: 3%;padding-bottom: 3%">
 
             <div style="margin-bottom: 2%">
                 <ion-item lines="none">

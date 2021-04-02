@@ -1,12 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { IonicModule } from '@ionic/angular';
+import {IonicModule} from '@ionic/angular';
 
-import { CreatePageRoutingModule } from './create-routing.module';
+import {CreatePageRoutingModule} from './create-routing.module';
 
-import { CreatePage } from './create.page';
+import {CreatePage} from './create.page';
+import {FileSizeFormatPipe} from './file-size-format.pipe';
 
 @NgModule({
     imports: [
@@ -16,6 +17,8 @@ import { CreatePage } from './create.page';
         CreatePageRoutingModule,
         ReactiveFormsModule
     ],
-  declarations: [CreatePage]
+    declarations: [CreatePage, FileSizeFormatPipe
+    ]
 })
-export class CreatePageModule {}
+export class CreatePageModule {
+}
