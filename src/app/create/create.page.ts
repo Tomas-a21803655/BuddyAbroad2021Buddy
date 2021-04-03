@@ -90,6 +90,7 @@ export class CreatePage implements OnInit {
     }
 
     resetFields(){
+        this.isUploading = this.isUploaded = false
         this.validationsForm = this.formBuilder.group({
             name: new FormControl('', Validators.required),
             description: new FormControl('', Validators.required),
