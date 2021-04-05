@@ -1,5 +1,7 @@
 {
-  "name": "my-first-firebase-app",
-  "integrations": {},
+  "name": "Buddy-Abroad-Buddy",
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
