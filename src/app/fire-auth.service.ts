@@ -11,6 +11,8 @@ export class FireAuthService {
   constructor(private firebaseService: FireStorageService, public afAuth: AngularFireAuth) {
   }
 
+  // com
+
   public doRegister(value: { email: string, password: string }): Promise<firebase.auth.UserCredential> {
     return firebase.auth().createUserWithEmailAndPassword(value.email, value.password);
   }
