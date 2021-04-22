@@ -67,7 +67,7 @@ export class FireStorageService {
                         .collection<HomeTripCardsModel>(FireStorageService.TRIPS_KEY).doc<HomeTripCardsModel>(tripId).valueChanges();
                 }));
     }
-
+    // doc info
     public getUserDocInfo(): Observable<any> {
         const currentUser = firebase.auth().currentUser;
         return this.af.collection(FireStorageService.USERS_KEY).doc(currentUser.uid).valueChanges();
