@@ -1,7 +1,8 @@
 {
   "name": "Buddy-Abroad-Buddy",
   "integrations": {
-    "cordova": {}
+    "cordova": {},
+    "capacitor": {}
   },
   "type": "angular"
 }
