@@ -8,7 +8,7 @@
                         <ion-icon style=";width: 113px;height: 113px;" name="images"></ion-icon>
                     </div>
                     <ion-button color="white" shape="round" style="--box-shadow: none">
-                        <input id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)"/>
+                        <input required="required" id="uploadBtn" type="file" class="upload" (change)="uploadFile($event.target.files)"/>
                     </ion-button>
                 </ion-card-content>
             </ion-card>
@@ -45,7 +45,7 @@
                 <ion-item lines="none">
                     <ion-label position="floating" style="font:Bold 25px OpenSans-Bold;color: #3D3D3D;">Tour Name
                     </ion-label>
-                    <ion-input type="text" formControlName="name"></ion-input>
+                    <ion-input required="true" type="text" formControlName="name"></ion-input>
                 </ion-item>
             </div>
 
@@ -54,6 +54,12 @@
                     description
                 </ion-label>
                 <ion-input type="text" formControlName="description"></ion-input>
+            </ion-item>
+
+            <ion-item lines="none">
+                <ion-label position="floating" style="font:normal 15px OpenSans-Regular;color: #3D3D3D;">Location
+                </ion-label>
+                <ion-input required="true" type="text" formControlName="location"></ion-input>
             </ion-item>
 
             <div style="margin-top: 5%">
@@ -68,13 +74,13 @@
                         <ion-col class="downCol">
                             <ion-item lines="none">
                                 <ion-label position="floating">Add Duration</ion-label>
-                                <ion-input type="number" formControlName="time"></ion-input>
+                                <ion-input required="true"  type="number" formControlName="time"></ion-input>
                             </ion-item>
                         </ion-col>
                         <ion-col class="downCol">
                             <ion-item lines="none">
                                 <ion-label position="floating">Define Group size</ion-label>
-                                <ion-input type="number" formControlName="size"></ion-input>
+                                <ion-input required="true"  type="number" formControlName="size"></ion-input>
                             </ion-item>
                         </ion-col>
                     </ion-row>
@@ -88,13 +94,13 @@
                         <ion-col class="downCol">
                             <ion-item lines="none">
                                 <ion-label position="floating">Add Price</ion-label>
-                                <ion-input type="number" formControlName="price"></ion-input>
+                                <ion-input required="true"   type="number" formControlName="price"></ion-input>
                             </ion-item>
                         </ion-col>
                         <ion-col class="downCol">
                             <ion-item lines="none">
                                 <ion-label position="floating">Add Details</ion-label>
-                                <ion-input type="text" formControlName="details"></ion-input>
+                                <ion-input required="true" type="text" formControlName="details"></ion-input>
                             </ion-item>
                         </ion-col>
                     </ion-row>

@@ -86,6 +86,9 @@ export class CreatePage implements OnInit {
             details: new FormControl('', Validators.compose([
                 Validators.required
             ])),
+            location: new FormControl('', Validators.compose([
+                Validators.required
+            ])),
         });
     }
 
@@ -98,6 +101,7 @@ export class CreatePage implements OnInit {
             size: new FormControl('', Validators.required),
             price: new FormControl('', Validators.required),
             details: new FormControl('', Validators.required),
+            location: new FormControl('', Validators.required),
         });
     }
 
@@ -117,6 +121,7 @@ export class CreatePage implements OnInit {
             price: value.price,
             details: value.details,
             createdBy: currentUser.uid,
+            location: value.location,
         };
         await this.fireStorageService.createTrip(trip).then(
             () => {

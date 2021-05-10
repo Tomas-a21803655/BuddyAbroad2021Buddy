@@ -91,4 +91,8 @@ export class FireStorageService {
             .collection('touristScheduledTrips').doc(tripId).update(field);
     }
 
+    public getTargetUserDocInfo(target): Observable<any> {
+        return this.af.collection(FireStorageService.USERS_KEY).doc(target).valueChanges();
+    }
+
 }

@@ -16,8 +16,12 @@
             <ion-text style="font:Bold 25px OpenSans-Bold;color: #3D3D3D;">{{trip?.name}}</ion-text>
         </div>
 
-        <ion-text style="font:normal 15px OpenSans-Regular;color: #3D3D3D;">
+        <ion-text style="margin-bottom: 2%;font:normal 15px OpenSans-Regular;color: #3D3D3D;">
             {{trip?.description}}
+        </ion-text>
+        <br>
+        <ion-text style="font:normal 15px OpenSans-Regular;color: #3D3D3D;">
+            {{trip?.location}}
         </ion-text>
 
         <div style="margin-top: 5%">
@@ -62,6 +66,10 @@
                     <h3>{{allUsersEnrolled[i].date}} - {{allUsersEnrolled[i].time}}
                         - {{allUsersEnrolled[i].status}}</h3>
                 </ion-label>
+                <ion-button class="buttons" fill="outline" color="warning" style="text-transform: none;border-radius: 10px"
+                            routerLink="/chat/{{this.allUsersEnrolled[i].orderedBy}}">
+                    <span style="color: #2b2b2b;font:normal 10px OpenSans-Regular">Message</span>
+                </ion-button>
                 <ion-button color="warning" class="buttons"
                             (click)="endTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy)"
                             routerLink="/tabs/bookings">End Trip
