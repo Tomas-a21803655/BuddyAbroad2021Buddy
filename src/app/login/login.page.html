@@ -1,3 +1,9 @@
+<ion-header class="ion-no-border">
+  <ion-toolbar style="color:#F0F0F0;">
+
+  </ion-toolbar>
+</ion-header>
+
 <ion-content class="form-content ion-padding">
   <img class="center" src="/assets/logoandname.png"/>
   <form class="form" [formGroup]="validationsForm" (ngSubmit)="tryLogin(validationsForm.value)">
@@ -35,6 +41,6 @@
   </form>
 
   <p class="go-to-register">
-    No account yet? <a (click)="goRegisterPage()" color="purple">Create an account.</a>
+    No account yet? <a (click)="goRegisterPage()">Create an account.</a>
   </p>
 </ion-content>
