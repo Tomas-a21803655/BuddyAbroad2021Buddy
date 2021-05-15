@@ -17,6 +17,8 @@ export class VisitDetailsPage implements OnInit {
     public allUsersEnrolled: any = [];
     public allUsersEnrolledInfo: any = [];
     public tripId: string = this.route.snapshot.paramMap.get('id');
+    public btnTxtApproved = 'Approve';
+    public btnTxtEnd = 'End Trip';
 
 
     constructor(private router: Router, private navCtrl: NavController,
@@ -58,11 +60,24 @@ export class VisitDetailsPage implements OnInit {
             });
     }
 
-    endTrip(tripId,touristId) {
-        this.fireStorageService.updateTripStatus('Complete',tripId,touristId);
+    async endTrip(tripId, touristId) {
+        await this.fireStorageService.updateTripStatus('Complete', tripId, touristId).then(
+            () => {
+                this.btnTxtEnd = 'Ended!'
+            }
+        );
+    }
+
+    async approveTrip(tripId, touristId) {
+        await this.fireStorageService.updateTripStatus('Booked', tripId, touristId).then(
+            () => {
+                this.btnTxtApproved = 'Approved!'
+            }
+        );
     }
 
     goback() {
         this.navCtrl.pop();
     }
+
 }

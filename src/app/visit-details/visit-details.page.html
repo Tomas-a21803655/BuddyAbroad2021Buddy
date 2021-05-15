@@ -69,9 +69,13 @@
                             routerLink="/chat/{{this.allUsersEnrolled[i].orderedBy}}">
                     <span style="color: #2b2b2b;font:normal 10px OpenSans-Regular">Message</span>
                 </ion-button>
-                <ion-button color="warning" class="buttons"
+                <ion-button *ngIf="allUsersEnrolled[i].status == 'Pending'" color="warning" class="buttons"
                             (click)="endTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy)"
-                            routerLink="/tabs/bookings">End Trip
+                            >{{this.btnTxtApproved}}
+                </ion-button>
+                <ion-button *ngIf="allUsersEnrolled[i].status == 'Booked'" color="danger" class="buttons"
+                            (click)="endTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy)"
+                            >{{this.btnTxtEnd}}
                 </ion-button>
             </ion-item>
         </section>
