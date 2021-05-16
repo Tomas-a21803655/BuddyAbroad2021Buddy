@@ -70,12 +70,12 @@
                     <span style="color: #2b2b2b;font:normal 10px OpenSans-Regular">Message</span>
                 </ion-button>
                 <ion-button *ngIf="allUsersEnrolled[i].status == 'Pending'" color="warning" class="buttons"
-                            (click)="approveTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy)"
-                            >{{this.btnTxtApproved}}
+                            (click)="approveTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy,i)"
+                            >{{this.buttonTextArray[i]}}
                 </ion-button>
                 <ion-button *ngIf="allUsersEnrolled[i].status == 'Booked'" color="danger" class="buttons"
-                            (click)="endTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy)"
-                            >{{this.btnTxtEnd}}
+                            (click)="endTrip(allUsersEnrolled[i].id,allUsersEnrolled[i].orderedBy,i)"
+                            >{{this.buttonTextArray[i]}}
                 </ion-button>
             </ion-item>
         </section>

@@ -16,9 +16,8 @@ export class VisitDetailsPage implements OnInit {
     public trip: HomeTripCardsModel;
     public allUsersEnrolled: any = [];
     public allUsersEnrolledInfo: any = [];
+    public buttonTextArray: any = [];
     public tripId: string = this.route.snapshot.paramMap.get('id');
-    public btnTxtApproved = 'Approve';
-    public btnTxtEnd = 'End Trip';
 
 
     constructor(private router: Router, private navCtrl: NavController,
@@ -37,7 +36,6 @@ export class VisitDetailsPage implements OnInit {
                     this.getEnrolledUsers(doc.id);
                 });
             });
-
     }
 
     public getEnrolledUsers(targetUser): Subscription {
@@ -48,6 +46,14 @@ export class VisitDetailsPage implements OnInit {
                     if (data.orderedTripId === this.tripId) {
                         this.getEnrolledUserInfo(data.orderedBy);
                         this.allUsersEnrolled.push(doc.data());
+                        if (data.status === 'Booked') {
+                            this.buttonTextArray.push('End Trip');
+                        } else if (data.status === 'Pending') {
+                            this.buttonTextArray.push('Approve');
+                        } else {
+                            this.buttonTextArray.push('Completed');
+                        }
+                        console.log(this.buttonTextArray)
                     }
                 });
             });
@@ -60,18 +66,18 @@ export class VisitDetailsPage implements OnInit {
             });
     }
 
-    async endTrip(tripId, touristId) {
+    async endTrip(tripId, touristId, i) {
         await this.fireStorageService.updateTripStatus('Complete', tripId, touristId).then(
             () => {
-                this.btnTxtEnd = 'Ended!'
+                this.buttonTextArray[i] = 'Ended!'
             }
         );
     }
 
-    async approveTrip(tripId, touristId) {
+    async approveTrip(tripId, touristId, i) {
         await this.fireStorageService.updateTripStatus('Booked', tripId, touristId).then(
             () => {
-                this.btnTxtApproved = 'Approved!'
+                this.buttonTextArray[i] = 'Approved!'
             }
         );
     }
